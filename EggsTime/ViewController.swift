@@ -8,12 +8,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    let eggsTime = [
+        "Soft": 5,
+        "Medium": 7,
+        "Hard": 12
+    ]
+    
+    @IBAction func HardnessSelected(_ sender: UIButton) {
+        let hardness = sender.currentTitle
+        
+        switch hardness {
+        case "Soft":
+            print(eggsTime["Soft"]!)
+        case "Medium":
+            print(eggsTime["Medium"]!)
+        case "Hard":
+            print(eggsTime["Hard"]!)
+        default:
+            print("Error")
+        }
+        
     }
-
-
+    
 }
 
