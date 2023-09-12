@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     
     var secondRemaining = 60
     
-    let eggsTime = [
-        "Soft": 300,
-        "Medium": 420,
-        "Hard": 720
+    var eggsTime = [
+        "Soft": 30,
+        "Medium": 45,
+        "Hard": 60
     ]
     
     @IBAction func HardnessSelected(_ sender: UIButton) {
@@ -26,9 +26,10 @@ class ViewController: UIViewController {
         secondRemaining = eggsTime[hardness]!
         
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        
     }
     
-    @objc func update() {
+    @objc func update(){
         if secondRemaining > 0 {
             print("\(secondRemaining) seconds.")
             secondRemaining -= 1
