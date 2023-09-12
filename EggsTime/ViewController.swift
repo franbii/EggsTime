@@ -28,15 +28,11 @@ class ViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
     
-    func timeString(time: TimeInterval) -> String {
-        let second = Int(time) % 60
-        return String(format: "%02i", second)
-    }
-    
     @objc func update() {
-        let time = timeString(time: TimeInterval(secondRemaining))
-        secondRemaining -= 1
-        secondTimerLabel.text = time
-        print("\(time) seconds")
+        if secondRemaining > 0 {
+            print("\(secondRemaining) seconds.")
+            secondRemaining -= 1
+            secondTimerLabel.text = String(secondRemaining)
+        }
     }
 }
