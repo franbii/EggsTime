@@ -10,20 +10,22 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var secondTimerLabel: UILabel!
+    
     var secondRemaining = 60
+    
     let eggsTime = [
-        "Soft": 5,
-        "Medium": 7,
-        "Hard": 12
+        "Soft": 300,
+        "Medium": 420,
+        "Hard": 720
     ]
     
     @IBAction func HardnessSelected(_ sender: UIButton) {
         
         let hardness = sender.currentTitle! // Soft, Medium, Hard
         
-        _ = eggsTime[hardness]!
+        secondRemaining = eggsTime[hardness]!
         
-        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
     
     func timeString(time: TimeInterval) -> String {
@@ -37,6 +39,4 @@ class ViewController: UIViewController {
         secondTimerLabel.text = time
         print("\(time) seconds")
     }
-    
 }
-
