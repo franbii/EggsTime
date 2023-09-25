@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var secondTimerLabel: UILabel!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
     var secondRemaining = 60
     
     var timer = Timer()
@@ -37,7 +39,10 @@ class ViewController: UIViewController {
         if secondRemaining > 0 {
             print("\(secondRemaining) seconds.")
             secondRemaining -= 1
-            secondTimerLabel.text = String(secondRemaining)
+            secondTimerLabel.text = String("\(secondRemaining) seconds.")
+        } else {
+            timer.invalidate()
+            titleLabel.text = "DONE!"
         }
     }
 }

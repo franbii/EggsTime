@@ -147,6 +147,7 @@
                     </view>
                     <connections>
                         <outlet property="secondTimerLabel" destination="yRQ-Nk-R9O" id="7Kg-m6-BfS"/>
+                        <outlet property="titleLabel" destination="sFZ-0c-jNk" id="Kja-uE-dIW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
