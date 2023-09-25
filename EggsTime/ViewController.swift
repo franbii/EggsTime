@@ -32,11 +32,10 @@ class ViewController: UIViewController {
     }
     
     @objc func updateTimer() {
-        
         if secondsPassed < totalTime {
-            alarmSound()
             secondsPassed += 1
             progresBarView.progress = Float(secondsPassed) / Float(totalTime)
+            alarmSound()
         } else {
             timer.invalidate()
             titleLabel.text = "DONE!"
